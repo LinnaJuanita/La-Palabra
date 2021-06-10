@@ -1,204 +1,202 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>La Palabra</title>
+  <head>
+        <title>Desenredar La Pita: Un Fundamento</title>
+        <meta name="description" content="💿">
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-environment-component@1.2.0/dist/aframe-environment-component.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
 </head>
+
 <body>
-    <a-scene> 
+<a-scene>
+      <a-entity id="rig" movement-controls kinematic-body position="2.192 0 2">
+            <a-entity id="camera" camera position="-76.946 5.302 -70.000" look-controls  cursor="rayOrigin: mouse"></a-entity>
+          </a-entity>
+          
+          <!-- <a-entity environment="gridColor: #000000; dressingColor: #000000; groundColor2: #000000; groundColor: #000000; ground: flat; horizonColor: #7BC8A4; skyColor: #040443; lighting: none; active: true; lightPosition: 0 -0.01 -0.46; fog: 0.7; dressingAmount: 100; preset: starry" preset-switcher="" id="environment" visible=""><a-entity class="environment" position="0 50 0" light="intensity: 0.6; color: #8181a1; groundColor: #000000; type: hemisphere" visible="false"></a-entity><a-entity class="environment" position="0 -0.01 -0.46" light="shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10; intensity: 0.6" visible="false"></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" scale="1 1 3" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible="false"></a-entity><a-sky radius="200" theta-length="110" class="environment" geometry="" material="color: #040443; npot: false; fog: false"></a-sky><a-entity id="stars" visible="false"></a-entity><a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #CEE4F0; intensity: 0.1; groundColor: #000000" visible="false"></a-entity><a-entity class="environment" position="0 -0.01 -0.46" light="intensity: 0.1; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible="false"></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 3" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible="false"></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: skyshader; sunPosition: 0 0 0" visible="" geometry=""></a-sky><a-entity id="stars" visible=""></a-entity></a-entity> -->
+<!-- <a-entity environment="gridColor: #fff705; dressingColor: #d90808; groundColor2: #000000; groundColor: #000000; ground: flat; horizonColor: #7BC8A4; skyColor: #040443; lighting: none; active: true; lightPosition: 0 -0.01 -0.46; fog: 0.7; dressingAmount: 100; preset: starry" preset-switcher="" id="environment" visible=""><a-entity class="environment" position="0 50 0" light="intensity: 0.6; color: #8181a1; groundColor: #000000; type: hemisphere" visible="false"></a-entity><a-entity class="environment" position="0 -0.01 -0.46" light="shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10; intensity: 0.6" visible="false"></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" scale="1 1 3" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible="false"></a-entity><a-sky radius="200" theta-length="110" class="environment" geometry="" material="color: #040443; npot: false; fog: false"></a-sky><a-entity id="stars" visible="false"></a-entity><a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #CEE4F0; intensity: 0.1; groundColor: #000000" visible="false"></a-entity><a-entity class="environment" position="0 -0.01 -0.46" light="intensity: 0.1; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible="false"></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 3" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible="false"></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: skyshader; sunPosition: 0 0 0" visible="" geometry=""></a-sky><a-entity id="stars" visible=""></a-entity><a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #CEE4F0; intensity: 0.1; groundColor: #000000" visible="false"></a-entity><a-entity class="environment" position="0 -0.01 -0.46" light="intensity: 0.1; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible="false"></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 3" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible="false"></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: skyshader; sunPosition: 0 0 0" visible="" geometry=""></a-sky><a-entity id="stars"></a-entity></a-entity> -->
+<!-- <a-entity environment="gridColor: #fff705; dressingColor: #d90808; groundColor2: #000000; groundColor: #000000; ground: flat; horizonColor: #7BC8A4; skyColor: #040443; active: true; lightPosition: 0 -0.01 -0.46; fog: 0.7; dressingAmount: 100; preset: goldmine" preset-switcher="" id="environment" visible=""><a-entity class="environment" position="0 50 0" light="intensity: 0.6; color: #8181a1; groundColor: #000000; type: hemisphere" visible="false"></a-entity><a-entity class="environment" position="0 -0.01 -0.46" light="shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10; intensity: 0.6" visible="false"></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" scale="1 1 3" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible="false"></a-entity><a-sky radius="200" theta-length="110" class="environment" geometry="" material="color: #040443; npot: false; fog: false"></a-sky><a-entity id="stars" visible="false"></a-entity><a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #CEE4F0; intensity: 0.1; groundColor: #000000" visible="false"></a-entity><a-entity class="environment" position="0 -0.01 -0.46" light="intensity: 0.1; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible="false"></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 3" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible="false"></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: skyshader; sunPosition: 0 0 0" visible="" geometry=""></a-sky><a-entity id="stars" visible=""></a-entity><a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #CEE4F0; intensity: 0.1; groundColor: #000000" visible="false"></a-entity><a-entity class="environment" position="0 -0.01 -0.46" light="intensity: 0.1; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible="false"></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 3" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible="false"></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: skyshader; sunPosition: 0 0 0" visible="" geometry=""></a-sky><a-entity id="stars"></a-entity><a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #8181a1; intensity: 0.6; groundColor: #000000" visible=""></a-entity><a-entity class="environment" position="0 -0.01 -0.46" light="intensity: 0.6; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible=""></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 50" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible=""></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: gradientshader; topColor: #040443; bottomColor: #7BC8A4" visible="" geometry=""></a-sky><a-entity id="stars" visible="false"></a-entity></a-entity> -->
+<a-sky radius="200" theta-length="110" class="environment" geometry="" material="color: #040443; npot: false; fog: false"></a-sky>
 
-      <a-light type="ambient" intensity="20" color="#222"></a-light>
-    
-      <a-entity environment="gridColor: #000000; dressingColor: #000000; groundColor2: #000000; groundColor: #000000; ground: flat; horizonColor: #7BC8A4; skyColor: #040443; lighting: none; active: true; lightPosition: 0 -0.01 -0.46; fog: 0.7; dressingAmount: 100; preset: starry" preset-switcher="" id="environment" visible=""><a-entity class="environment" position="0 50 0" light="intensity: 0.6; color: #8181a1; groundColor: #000000; type: hemisphere" visible="false"></a-entity><a-entity class="environment" position="0 -0.01 -0.46" light="shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10; intensity: 0.6" visible="false"></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" scale="1 1 3" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible="false"></a-entity><a-sky radius="200" theta-length="110" class="environment" geometry="" material="color: #040443; npot: false; fog: false"></a-sky><a-entity id="stars" visible="false"></a-entity><a-entity class="environment" position="0 50 0" light="type: hemisphere; color: #CEE4F0; intensity: 0.1; groundColor: #000000" visible="false"></a-entity><a-entity class="environment" position="0 -0.01 -0.46" light="intensity: 0.1; shadowCameraLeft: -10; shadowCameraBottom: -10; shadowCameraRight: 10; shadowCameraTop: 10" visible="false"></a-entity><a-entity rotation="-90 0 0" class="environmentGround environment" visible="" scale="1 1 3" shadow="cast: false; receive: false"></a-entity><a-entity class="environmentDressing environment" visible="false"></a-entity><a-sky radius="200" theta-length="110" class="environment" material="shader: skyshader; sunPosition: 0 0 0" visible="" geometry=""></a-sky><a-entity id="stars" visible=""></a-entity></a-entity>
-     
-      <a-image src="./pal1.png" position="0 0.1 9" rotation="-90.000 0.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+          <a-assets>
+            <a-asset-item id="aa" src="./aa.gltf"></a-asset-item>
+            <a-asset-item id="cop" src="./cop.gltf"></a-asset-item>
+           </a-assets>
+
+           <a-entity 
+      navigate-on-click="url: https://www.flipsnack.com/7EB9BEDD75E/desenredar-la-pita-un-fundamento.html"
+      gltf-model="#aa"  
+      scale="0.1 0.1 0.1" 
+      position="-79 5.302 -50.000" 
+      rotation="0 0 0 " 
+      material="shader: flat">
+  </a-entity>
+
+  <a-entity 
+      navigate-on-click="url: https://linnajuanita.github.io/AA/"
+      gltf-model="#cop"  
+      scale="0.03 0.03 0.03" 
+      position="-76.946 5.302 -50.000" 
+      rotation="0 0 0 " 
+      material="shader: flat">
+  </a-entity>
+
+    <a-image src="./pal1.png" position="0 0.1 9" rotation="-90.000 0.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+
+  <a-image src="./pal1.png" position="0 0.1 9" rotation="-90.000 0.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
       
-      <a-image src="./una.png" position="4.986 0.3 6.626" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./palabra.png" position="4.986 0.3 8" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./es.png" position="4.986 0.3 8.5" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./una.png" position="4.986 0.3 9.5" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./pequeña.png" position="4.986 0.3 10.3" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./certeza.png" position="4.986 0.3 11.4" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./una.png" position="4.986 0.3 6.626" rotation="-90.000 0.000 -90.000" scale="1 1 1" color="#FFF4C3" ></a-image>
+  <a-image src="./palabra.png" position="4.986 0.3 8" rotation="-90.000 0.000 -90.000" scale="3 1 1" color="#FFF4C3" ></a-image>
+  <a-image src="./es.png" position="4.986 0.3 8.5" rotation="-90.000 0.000 -90.000" scale="1 1 1" color="#FFF4C3" ></a-image>
+  <a-image src="./una.png" position="4.986 0.3 9.5" rotation="-90.000 0.000 -90.000" scale="1 1 1" color="#FFF4C3" ></a-image>
+  <a-image src="./pequeña.png" position="4.986 0.3 10.3" rotation="-90.000 0.000 -90.000" scale="3 1 1" color="#FFF4C3" ></a-image>
+  <a-image src="./certeza.png" position="4.986 0.3 11.4" rotation="-90.000 0.000 -90.000" scale="3 1 1" color="#FFF4C3" ></a-image>
 
-      <a-image src="./entre.png" position="4.562 0.3 7.766" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./comillas.png" position="4.562 0.3 8.858" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./perpicaces.png" position="4.562 0.3 10.392" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
-      
-      <a-image src="./porque.png" position="4.091 0.3 4.031" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./del.png" position="4.091 0.3 4.774" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./mismo.png" position="4.091 0.3 5.593" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./modo.png" position="4.091 0.3 6.409" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./en.png" position="4.091 0.3 7.134" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./que.png" position="4.091 0.3 7.764" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./una.png" position="4.091 0.3 8.443" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./particula.png" position="4.091 0.3 9" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./contiene.png" position="4.091 0.3 10.5" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./tal.png" position="4.091 0.3 11" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./magnitud.png" position="4.091 0.3 12" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./de.png" position="4.091 0.3 13" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./energía.png" position="4.091 0.3 14" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
-     
-      <a-image src="./también.png" position="3.300 0.3 6.646" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./trae.png" position="3.300  0.3 7.553" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./consigo.png" position="3.300  0.3 8.665" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./una.png" position="3.300  0.3 10.178" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./gran.png" position="3.300  0.3 12.196" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./cuota.png" position="3.300  0.3 14.072" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./de.png" position="3.300  0.3 14.072" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./comprensión.png" position="3.300  0.3 17.508" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-     
-      <a-image src="./para.png" position="4.986 0.3 10.3" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./aquel.png" position="4.986 0.3 11.4" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./que.png" position="4.986 0.3 10.3" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./esté.png" position="4.986 0.3 11.4" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./dispuesto.png" position="4.986 0.3 9.5" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./a.png" position="4.986 0.3 10.3" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./mirarla.png" position="4.986 0.3 11.4" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./de.png" position="4.986 0.3 10.3" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./frente.png" position="4.986 0.3 11.4" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-     
-     
-      <a-image src="./consigo.png" position="4.986 0.3 9.5" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./una.png" position="4.986 0.3 10.3" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-      <a-image src="./gran.png" position="4.986 0.3 11.4" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
-
-      <a-box src="./imagen2.jpg" position="4.986 0.109 6.626" scale="0.300 0.1 0.700" color="#FEC811"></a-box>
-
-          <a-image src="./una.png" position="4.986 0.3 6.626" rotation="-90.000 0.000 -90.000" scale="0.5 0.5 0.5" color="#FEC811" animation="property: position; to: 4.986 1 6.626; dur: 7000; easing: linear; loop: true delay: 05" ></a-image>
-          <a-image src="./palabra.png" position="4.925 0.3 7.355" rotation="-90.000 0.000 -90.000" scale="1 0.5 0.5" color="#FEC811" animation="property: position; to: 4.925 1 7.355; dur: 7000; easing: linear; loop: true" ></a-image>
-          <a-image src="./es.png" position="4.925 0.3 8" rotation="-90.000 0.000 -90.000" scale="1 0.5 0.5" color="#FEC811" animation="property: position; to: 4.925 1 7.355; dur: 7000; easing: linear; loop: true delay: 05"></a-image>
-          <a-image src="./una.png" position="4.925 0.3 9" rotation="-90.000 0.000 -90.000" scale="1 0.5 0.5" color="#FEC811" animation="property: position; to: 4.925 1 7.355; dur: 7000; easing: linear; loop: true" ></a-image>
-          <a-image src="./pequeña.png" position="4.925 0.3 10" rotation="-90.000 0.000 -90.000" scale="1 0.5 0.5" color="#FEC811" animation="property: position; to: 2.925 1 7.355; dur: 7000; easing: linear; loop: true delay: 05" ></a-image>
-          <a-image src="./certeza.png" position="4.925 0.3 11" rotation="-90.000 0.000 -90.000" scale="1 0.5 0.5" color="#FEC811" animation="property: position; to: 2.925 1 7.355; dur: 7000; easing: linear; loop: true" ></a-image>
-          
-         
-
-          <a-light type="ambient" intensity="40" color="#222" position="5 5 35"></a-light>
-          <a-image src="./pal1.png" position="5 0.1 35" rotation="-70.727 0.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./pal1.png" position="5 0.1 35" rotation="62.895 0.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./pal1.png" position="5 0.1 35" rotation="-90.000 0.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-
-          <a-light type="ambient" intensity="80" color="#222" position="-3  5 5 35"></a-light>
-          <a-image src="./pal1.png" position="-35 0.1 35" rotation="-51.354 -58.094 -25.912" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./pal1.png" position="-35 0.1 35" rotation="51.354 58.094 25.912" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./pal1.png" position="-35 0.1 35" rotation="-51.354 -58.094 -25.912" scale="15 15 15" color="#FFF4C3"></a-image>
-          
-          <a-image src="./palabra.png" position="0 0.1 9" rotation="-90.000 0.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-
-          <a-light type="ambient" intensity="100" color="#222" position="-22.946 10.302 9"></a-light>
-          <a-image src="./palabra.png" position="-22.946 5.302 9" rotation="13.063 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-28.946 5.302 9" rotation="16.063 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-34.946 5.302 9" rotation="19.063 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-40.946 5.302 9" rotation="23.063 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-46.946 5.302 9" rotation="26.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-52.946 5.302 9" rotation="29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-58.946 5.302 9" rotation="36.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-64.946 5.302 9" rotation="41.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-70.946 5.302 9" rotation="47.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-76.946 5.302 9" rotation="54.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-82.946 5.302 9" rotation="60.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-88.946 5.302 9" rotation="65.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-94.946 5.302 9" rotation="70.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-100.946 5.302 9" rotation="76.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-
-          <a-light type="ambient" intensity="100" color="#222" position="-104.946  5.302 -104"></a-light>
-          <a-image src="./palabra.png" position="90  5.302 -60" rotation="19.063 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="90   5.302 -60" rotation="23.063 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="90   5.302 -60" rotation="26.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="90   5.302 -60" rotation="29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="90   5.302 -60" rotation="36.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="90  5.302 -60" rotation="41.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="90   5.302 -60" rotation="47.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="90   5.302 -60" rotation="54.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="90   5.302 -60" rotation="60.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="90   5.302 -60" rotation="65.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="90  5.302 -60" rotation="70.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="90   5.302 -60" rotation="76.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-
-
-          <a-light type="ambient" intensity="100" color="#222" position="64.946  10.302 -9"></a-light>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="19.063 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="23.063 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="26.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="29.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="36.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946 5.302 -9" rotation="41.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="47.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="54.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="60.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="65.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="70.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="76.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="47.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="54.000 130-90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="60.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="65.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="70.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="76.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-
-
-          <a-image src="./palabra.png" position="-64.946  5.302 -29" rotation="35.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-70.946  5.302 -29" rotation="-35.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-76.946  5.302 -29" rotation="29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-81.946  5.302 -29" rotation="-29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-86.946  5.302 -29" rotation="29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-91.946  5.302 -29" rotation="-29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          
-          <a-image src="./palabra.png" position="-71.946  15.302 -29" rotation="30.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-76.946  15.302 -29" rotation="-30.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-81.946  15.302 -29" rotation="29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-86.946  15.302 -29" rotation="-29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          
-          <a-image src="./palabra.png" position="-76.946  25.302 -29" rotation="29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-          <a-image src="./palabra.png" position="-81.946  25.302 -29" rotation="-29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
-
-
-      <!--<a-image src="./pal1.png" position="0 0.1 0" rotation="90 0 0" scale="10 10 10" color="#FFF4C3"></a-image>
-      
-         <!--<a-image src="./certeza1.1.png" position="22.931 0.830 19.652" scale="7 7 7" rotation="0.000 180.000 0.000" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-image>></a-image>
-         
-         <a-image src="./certeza1.3.png" position="-23.097 -0.897 18.871" scale="7 7 7" rotation="0.000 180.000 0.000" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-image>></a-image>
-         <a-image src="./afirmar.png" position="9.130 3.211 -14.048" scale="7 7 7" rotation="0.000 180.000 0.000" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-image>></a-image>
-         <a-box position="-1 1.6 -5" animation="property: position; to: 1 8 -10; dur: 2000; easing: linear; loop: true" color="tomato"></a-box>
-         <a-sphere position="-0.039 4.206 48.072" radius="0.25" color="#FFFCBB"></a-sphere>
-         <a-box src="./1.png" position="-1 3 -6" scale="10 10 10" color="tomato" rotation="0.000 180.000 0.000" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-box>></a-box>
-         <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder><!---->
-     
-
-        <a-sky color="#0A8CD5"></a-sky> 
-        
+  <a-image src="./entre.png" position="4.562 0.3 7.766" rotation="-90.000 0.000 -90.000" scale="1 1 1" color="#FFF4C3" ></a-image>
+  <a-image src="./comillas.png" position="4.562 0.3 8.858" rotation="-90.000 0.000 -90.000" scale="3 1 1" color="#FFF4C3" ></a-image>
+  <a-image src="./perpicaces.png" position="4.562 0.3 10.392" rotation="-90.000 0.000 -90.000" scale="3 1 1" color="#FFF4C3" ></a-image>
   
-            
-      <a-sky color="#ECECEC"></a-sky>
-      
-      navigate-on-click="url: https://www.youtube.com/watch?v=HajECunjYjM"
+  <a-image src="./porque.png" position="4.091 0.3 4.031" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./del.png" position="4.091 0.3 4.774" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./mismo.png" position="4.091 0.3 5.593" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./modo.png" position="4.091 0.3 6.409" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./en.png" position="4.091 0.3 7.134" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./que.png" position="4.091 0.3 7.764" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./una.png" position="4.091 0.3 8.443" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./particula.png" position="4.091 0.3 9" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./contiene.png" position="4.091 0.3 10.5" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./tal.png" position="4.091 0.3 11" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./magnitud.png" position="4.091 0.3 12" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./de.png" position="4.091 0.3 13" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./energía.png" position="4.091 0.3 14" rotation="-90.000 0.000 -90.000" scale="3 1 1 color="#FFF4C3" ></a-image>
+ 
+  <a-image src="./también.png" position="3.300 0.3 6.646" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./trae.png" position="3.300  0.3 7.553" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./consigo.png" position="3.300  0.3 8.665" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./una.png" position="3.300  0.3 10.178" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./gran.png" position="3.300  0.3 12.196" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./cuota.png" position="3.300  0.3 14.072" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./de.png" position="3.300  0.3 14.072" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./comprensión.png" position="3.300  0.3 17.508" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+ 
+  <a-image src="./para.png" position="4.986 0.3 10.3" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./aquel.png" position="4.986 0.3 11.4" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./que.png" position="4.986 0.3 10.3" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./esté.png" position="4.986 0.3 11.4" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./dispuesto.png" position="4.986 0.3 9.5" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./a.png" position="4.986 0.3 10.3" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./mirarla.png" position="4.986 0.3 11.4" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./de.png" position="4.986 0.3 10.3" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./frente.png" position="4.986 0.3 11.4" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+ 
+  <a-image src="./consigo.png" position="4.986 0.3 9.5" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./una.png" position="4.986 0.3 10.3" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
+  <a-image src="./gran.png" position="4.986 0.3 11.4" rotation="-90.000 0.000 -90.000" scale="1 1 1 color="#FFF4C3" ></a-image>
 
-      <script>
-        AFRAME.registerComponent('navigate-on-click', {
-            schema: {
-                url: { default: '' }
-            },
-      
-            init: function () {
-                var data = this.data;
-                var el = this.el;
-      
-                el.addEventListener('click', function () {
-                    window.location.href = data.url;
-                });
-            }
-        });        
-      </script>
+  <a-box src="./imagen2.jpg" position="4.986 0.109 6.626" scale="0.300 0.1 0.700" color="#FEC811"></a-box>
 
-    </a-scene>
-/body>
+      <a-image src="./una.png" position="4.986 0.3 6.626" rotation="-90.000 0.000 -90.000" scale="0.5 0.5 0.5" color="#FEC811" animation="property: position; to: 4.986 1 6.626; dur: 7000; easing: linear; loop: true delay: 05" ></a-image>
+      <a-image src="./palabra.png" position="4.925 0.3 7.355" rotation="-90.000 0.000 -90.000" scale="1 0.5 0.5" color="#FEC811" animation="property: position; to: 4.925 1 7.355; dur: 7000; easing: linear; loop: true" ></a-image>
+      <a-image src="./es.png" position="4.925 0.3 8" rotation="-90.000 0.000 -90.000" scale="1 0.5 0.5" color="#FEC811" animation="property: position; to: 4.925 1 7.355; dur: 7000; easing: linear; loop: true delay: 05"></a-image>
+      <a-image src="./una.png" position="4.925 0.3 9" rotation="-90.000 0.000 -90.000" scale="1 0.5 0.5" color="#FEC811" animation="property: position; to: 4.925 1 7.355; dur: 7000; easing: linear; loop: true" ></a-image>
+      <a-image src="./pequeña.png" position="4.925 0.3 10" rotation="-90.000 0.000 -90.000" scale="1 0.5 0.5" color="#FEC811" animation="property: position; to: 2.925 1 7.355; dur: 7000; easing: linear; loop: true delay: 05" ></a-image>
+      <a-image src="./certeza.png" position="4.925 0.3 11" rotation="-90.000 0.000 -90.000" scale="1 0.5 0.5" color="#FEC811" animation="property: position; to: 2.925 1 7.355; dur: 7000; easing: linear; loop: true" ></a-image>
+      
+      <a-light type="ambient" intensity="40" color="#222" position="5 5 35"></a-light>
+      <a-image src="./pal1.png" position="5 0.1 35" rotation="-70.727 0.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./pal1.png" position="5 0.1 35" rotation="62.895 0.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./pal1.png" position="5 0.1 35" rotation="-90.000 0.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+
+      <a-light type="ambient" intensity="80" color="#222" position="-3  5 5 35"></a-light>
+      <a-image src="./pal1.png" position="-35 0.1 35" rotation="-51.354 -58.094 -25.912" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./pal1.png" position="-35 0.1 35" rotation="51.354 58.094 25.912" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./pal1.png" position="-35 0.1 35" rotation="-51.354 -58.094 -25.912" scale="15 15 15" color="#FFF4C3"></a-image>
+      
+      <a-image src="./palabra.png" position="0 0.1 9" rotation="-90.000 0.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+
+      <a-light type="ambient" intensity="100" color="#222" position="-22.946 10.302 9"></a-light>
+      <a-image src="./palabra.png" position="-22.946 5.302 9" rotation="13.063 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-28.946 5.302 9" rotation="16.063 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-34.946 5.302 9" rotation="19.063 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-40.946 5.302 9" rotation="23.063 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-46.946 5.302 9" rotation="26.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-52.946 5.302 9" rotation="29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-58.946 5.302 9" rotation="36.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-64.946 5.302 9" rotation="41.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-70.946 5.302 9" rotation="47.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-76.946 5.302 9" rotation="54.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-82.946 5.302 9" rotation="60.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-88.946 5.302 9" rotation="65.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-94.946 5.302 9" rotation="70.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-100.946 5.302 9" rotation="76.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+
+      <a-light type="ambient" intensity="100" color="#222" position="-104.946  5.302 -104"></a-light>
+      <a-image src="./palabra.png" position="90  5.302 -60" rotation="19.063 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="90   5.302 -60" rotation="23.063 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="90   5.302 -60" rotation="26.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="90   5.302 -60" rotation="29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="90   5.302 -60" rotation="36.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="90  5.302 -60" rotation="41.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="90   5.302 -60" rotation="47.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="90   5.302 -60" rotation="54.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="90   5.302 -60" rotation="60.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="90   5.302 -60" rotation="65.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="90  5.302 -60" rotation="70.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="90   5.302 -60" rotation="76.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+
+      <a-light type="ambient" intensity="100" color="#222" position="64.946  10.302 -9"></a-light>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="19.063 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="23.063 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="26.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="29.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="36.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946 5.302 -9" rotation="41.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="47.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="54.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="60.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="65.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="70.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="76.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="47.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="54.000 130-90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="60.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="65.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="70.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="64.946  5.302 -9" rotation="76.000 130 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+
+      <a-image src="./palabra.png" position="-64.946  5.302 -29" rotation="35.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-70.946  5.302 -29" rotation="-35.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-76.946  5.302 -29" rotation="29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-81.946  5.302 -29" rotation="-29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-86.946  5.302 -29" rotation="29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-91.946  5.302 -29" rotation="-29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      
+      <a-image src="./palabra.png" position="-71.946  15.302 -29" rotation="30.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-76.946  15.302 -29" rotation="-30.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-81.946  15.302 -29" rotation="29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-86.946  15.302 -29" rotation="-29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      
+      <a-image src="./palabra.png" position="-76.946  25.302 -29" rotation="29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+      <a-image src="./palabra.png" position="-81.946  25.302 -29" rotation="-29.000 -90.000 -90.000" scale="15 15 15" color="#FFF4C3"></a-image>
+
+
+
+  <script>
+    AFRAME.registerComponent('navigate-on-click', {
+        schema: {
+            url: { default: '' }
+        },
+  
+        init: function () {
+            var data = this.data;
+            var el = this.el;
+  
+            el.addEventListener('click', function () {
+                window.location.href = data.url;
+            });
+        }
+    });        
+  </script>
+</a-scene>
+</body>
 </html>
-
-
-
-      
-     
